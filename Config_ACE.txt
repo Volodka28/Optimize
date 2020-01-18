@@ -1,0 +1,48 @@
+import GuiVersion
+import GuiDBM
+import GuiFILE
+import GuiML
+import GuiPT
+import GuiMO
+import GuiVC
+import GuiBC
+import GuiIC
+import GuiPC
+import GuiFan
+import GuiMacP
+import GuiMR
+import GuiMRF
+import GuiSC
+import GuiOut
+import GuiRun
+
+#The following line is for backwards-compatibility, DO NOT DELETE IT.
+GuiVersion.RecordVersion("2014.0.0.11217")
+
+GuiFILE.SetMode("ACEU")
+GuiFILE.Open("Q:/obechaika/rovno/1.DTF")
+GuiPT.Set("Flow", 1)
+GuiPT.Set("Heat", 1)
+GuiPT.Set("Turb", 1)
+GuiMO.Set("Shared/Polar", "Axisymmetric")
+GuiMO.Set("Flow/RefPressure", 0)
+GuiVC.Set([160, 183, 182, 159, 157, 156, 158, 105, 139, 99, 167, 168, 172, 173, 181], "Shared/Density_eval_method", "Ideal Gas Law")
+GuiVC.Set([160, 183, 182, 159, 157, 156, 158, 105, 139, 99, 167, 168, 172, 173, 181], "Shared/Viscosity_eval_method", "Constant(Kinematic)")
+GuiBC.Set([166, 146], "Flow/P", 39991)
+GuiBC.Set([166, 146], "Flow/T", 251)
+GuiBC.Set([166, 146], "Flow/T", 251.8824)
+GuiBC.Set([180, 103, 133, 134, 102, 91], "Flow/P", 26500)
+GuiBC.Set([180, 103, 133, 134, 102, 91], "Flow/T", 223.3)
+GuiBC.Set([180, 103, 133, 134, 102, 91], "Flow/U", 239.62897)
+GuiBC.Set([180, 103, 133, 134, 102, 91], "Turb/K", 8.633)
+GuiBC.Set([180, 103, 133, 134, 102, 91], "Turb/K", 8.6133)
+GuiBC.Set([180, 103, 133, 134, 102, 91], "Turb/D", 7821.3701)
+GuiBC.Set([179, 155], "Flow/P", 26500)
+GuiBC.Set([179, 155], "Flow/T", 223.3)
+GuiSC.Set("Iter/Max_Iteration", 10000)
+GuiSC.Set("Iter/Convergence_Crit", 0.0000001)
+GuiOut.Set("Graphic/T0", 1)
+GuiOut.Set("Graphic/MachNumber", 1)
+GuiOut.Set("Graphic/Y+", 1)
+GuiRun.Set("Shared/ParallelRun", 1)
+GuiRun.Set("Shared/NoOfProcessor", 4)
